@@ -14,15 +14,12 @@ export class CarrouselComponent {
   interval = 2000;
   // images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
   images = [
-    // "./assets/img/car-amazon.jpeg",
-    // "./assets/img/car-berries.jpeg",
     "./assets/img/car-hand.jpeg",
     "./assets/img/car-jungle.jpeg",
     "./assets/img/car-berries2.jpeg",
     "./assets/img/car-jungle2.jpeg",
     "./assets/img/car-palmier.jpeg",
     "./assets/img/car-pairot.jpeg",
-    // "./assets/img/car-jungle3.JPG"
   ];
 
   constructor(config: NgbCarouselConfig) {

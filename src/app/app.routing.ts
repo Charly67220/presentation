@@ -4,17 +4,17 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
-import { LoginComponent } from './login/login.component';
+import { AçaiComponent } from './Açai/Açai.component';
 
 const routes: Routes =[
     { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
+    { path: 'menu',     component: MenuComponent },
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
-    { path: 'login',          component: LoginComponent },
+    { path: 'Açai',          component: AçaiComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
@@ -23,7 +23,8 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-      useHash: true
+      useHash: true,
+      // anchorScrolling: 'enabled',
     })
   ],
   exports: [

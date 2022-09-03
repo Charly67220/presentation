@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-Açai',
+  templateUrl: './Açai.component.html',
+  styleUrls: ['./Açai.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AçaiComponent implements OnInit {
   mobile = false;
   
   constructor() { }

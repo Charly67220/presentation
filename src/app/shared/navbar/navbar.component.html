@@ -28,13 +28,13 @@
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" [routerLink]="['/menu']">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">La Carte</span>
           </a>
           <div class="dropdown-menu-xl dropdown-menu">
             <div class="dropdown-menu-inner">
-              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']"
+              <a routerLinkActive="active" [routerLink]="['/menu']"
                 class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                   <!-- <i class="ni ni-spaceship"></i> -->
@@ -58,7 +58,7 @@
                   <p class="description d-none d-md-inline-block mb-0">Caoxinha, crêpe au tapioca, ...</p>
                 </div>
               </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+              <a routerLinkActive="active" [routerLink]="['/menu']"
                 class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
                   <img src="./assets/vendor/nucleo/fonts/soft-drink.svg">
@@ -73,7 +73,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a [routerLink]="['/login']" class="nav-link no-caret">
+          <a [routerLink]="['/Açai']" class="nav-link no-caret">
             <i class="ni ni-bulb-61 d-lg-none"></i>
             <span class="nav-link-inner--text">L'Açaì c'est quoi ?</span>
           </a>
