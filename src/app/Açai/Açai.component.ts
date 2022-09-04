@@ -13,6 +13,7 @@ export class AçaiComponent implements OnInit {
   ngOnInit() {
     if (window.screen.width <= 500) {
       this.mobile = true;
+      console.log (this.mobile);
     };
   }
 

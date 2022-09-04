@@ -13,8 +13,7 @@ export class CarrouselComponent {
   showNavigationIndicators = false;
   interval = 2000;
   // images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
-  images = [
-    "./assets/img/car-hand.jpeg",
+  images = ['./assets/img/car-hand.jpeg',
     "./assets/img/car-jungle.jpeg",
     "./assets/img/car-berries2.jpeg",
     "./assets/img/car-jungle2.jpeg",
