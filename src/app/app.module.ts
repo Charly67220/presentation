@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
@@ -16,6 +18,7 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
 
 import { HomeModule } from './home/home.module';
 import { AçaiComponent } from './Açai/Açai.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { AçaiComponent } from './Açai/Açai.component';
     CarrouselComponent,
     NavbarComponent,
     FooterComponent,
-    AçaiComponent
+    AçaiComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { AçaiComponent } from './Açai/Açai.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

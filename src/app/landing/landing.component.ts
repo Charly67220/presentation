@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxCaptureService } from 'ngx-capture';
 import { tap } from 'rxjs';
@@ -27,27 +28,74 @@ export class LandingComponent implements OnInit {
   ShowDetails21 = false;
   ShowDetails22 = false;
 
-  ShowPhoto = false ;
+  ShowPhoto = false;
   image: any;
 
   compter = 0;
 
+  //
+  event: any[];
+  //
+
   constructor(
     private captureService: NgxCaptureService,
+    private httpClient: HttpClient
   ) {
 
   }
 
   @ViewChild('screen', { static: true }) screen: any;
 
-  ngOnInit() { }
+  ngOnInit() {
+    //   this.httpClient.post<any>('https://reqres.in/api/posts', { title: 'Angular POST Request Example' }).subscribe(data => {
+    //     this.select = data.id;
+    // })
+
+    this.httpClient
+      // .get('https://sos-firebase-default-rtdb.firebaseio.com/actualites.json')
+      .get<any[]>('https://sos-firebase-default-rtdb.firebaseio.com/event.json')
+      .subscribe(
+        (response) => {
+          this.event = response;
+          // console.log(">>>>>>>>>>>>>>>> ", this.event, "<<<<<<<<<<<<<<<<<<<<");
+          console.log(">>>>>>>>>>>>>>>> ", this.event[0], "<<<<<<<<<<<<<<<<<<<<");
+          // console.log(">>>>>>>>>>>>>>>> ", this.event[4], "<<<<<<<<<<<<<<<<<<<<");
+          // this.emitAppareilSubject();
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+  }
+
+  saveToServer() {
+    console.log(this.image);
+    this.event[3] = {
+      date: "19 Octobre 1789",
+      det: this.image,
+      img: "assets/img/idweekend.jpg",
+      titre: "Je change le titre"
+    }
+    console.log("saveToServer");
+    this.httpClient
+      .post('https://sos-firebase-default-rtdb.firebaseio.com/event.json', this.event[3])
+      .subscribe(
+        () => {
+          console.log('Enregistrement terminé !');
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+      // changer post par put pour màj
+  }
 
   selectElement(stuff) {
     // console.log(this.compter);
     if (stuff == 0) {
-        this.ShowCup = true;
-      };
-      // console.log(this.ShowCup);
+      this.ShowCup = true;
+    };
+    // console.log(this.ShowCup);
     if (this.compter == 0 || this.compter == 1) {
       if (stuff == 1) {
         // pomme
@@ -158,15 +206,17 @@ export class LandingComponent implements OnInit {
   }
 
   capture() {
-   
+
     this.captureService.getImage(this.screen.nativeElement, true)
       .pipe(
         tap(img => {
-          console.log(img);
+          // console.log(img);
           this.image = img
         })
       ).subscribe();
-      this.ShowPhoto = true;
-      console.log("this.image >>", this.image);
+    this.ShowPhoto = true;
+    // console.log("this.image >>", this.image);
   }
+
+
 }
