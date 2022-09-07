@@ -197,7 +197,7 @@
           <div class="pl-4">
             <div class="row text-center">
               <!-- >>>>>>>>>>>>>>> GESTION DU RENDU VISUEL <<<<<<<<<<<<<<<<<<<<<< -->
-              <div class="col-md-3 ">
+              <div class="col-md-3 " #screen>
                 <div *ngIf="ShowDetails22">
                   <img src="./assets/img/topping2.png" width="120px">
                 </div>
@@ -304,10 +304,7 @@
                 </div>
               </div>
               <div class="col-md-3" style="padding-top:20px; padding-bottom: 20px;">
-                <!-- <br> -->
-                <!-- <button class="btn btn-1 btn-primary" type="button">Regular</button> -->
-                <button class="btn btn-1 btn-success" type="button">GO !</button>
-                <!-- <button class="btn btn-1 btn-danger" type="button">Danger</button> -->
+                <button class="btn btn-1 btn-success" (click)="capture()" type="button">GO !</button>
               </div>
             </div>
           </div>
@@ -338,8 +335,18 @@
       <span></span>
       <span></span>
     </div>
-    <!-- <div class="container py-md">
-      <div class="row row-grid justify-content-between align-items-center">
+     <div class="container py-md">
+      <div *ngIf="ShowPhoto">
+        <div class="row">
+          <div class="col-md-4">
+          <img src="{{image}}" alt="" width="100">
+          </div>
+          <div class="col-md-8">
+            <p></p>
+          </div>
+        </div>
+      </div>
+     <!-- <div class="row row-grid justify-content-between align-items-center">
         <div class="col-lg-6">
           <h3 class="display-3 text-white">A beautiful Design System
             <span class="text-white">completed with examples</span>
@@ -407,8 +414,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div> -->
+      </div> -->
+    </div> 
     <!-- SVG separator -->
     <div class="separator separator-bottom separator-skew">
       <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">

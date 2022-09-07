@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgxCaptureService } from 'ngx-capture';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-landing',
@@ -25,11 +27,18 @@ export class LandingComponent implements OnInit {
   ShowDetails21 = false;
   ShowDetails22 = false;
 
+  ShowPhoto = false ;
+  image: any;
+
   compter = 0;
 
-  constructor() {
+  constructor(
+    private captureService: NgxCaptureService,
+  ) {
 
   }
+
+  @ViewChild('screen', { static: true }) screen: any;
 
   ngOnInit() { }
 
@@ -146,5 +155,18 @@ export class LandingComponent implements OnInit {
     this.ShowDetails22 = false;
     this.compter = 0;
 
+  }
+
+  capture() {
+   
+    this.captureService.getImage(this.screen.nativeElement, true)
+      .pipe(
+        tap(img => {
+          console.log(img);
+          this.image = img
+        })
+      ).subscribe();
+      this.ShowPhoto = true;
+      console.log("this.image >>", this.image);
   }
 }
