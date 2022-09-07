@@ -15,7 +15,9 @@ const routes: Routes =[
     { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'Açai',          component: AçaiComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: "**", redirectTo: "accueil"
+    },
 ];
 
 @NgModule({
