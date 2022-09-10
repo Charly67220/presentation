@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nucleo-section.component.css']
 })
 export class NucleoSectionComponent implements OnInit {
+  mobile = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {   
     var nucleoView = document.getElementsByClassName('icons-container')[0];
     window.addEventListener('scroll', function (event) {
     	if (this.isInViewport(nucleoView)) {
@@ -20,6 +21,7 @@ export class NucleoSectionComponent implements OnInit {
       }
     }.bind(this), false);
   }
+
   isInViewport(elem) {
       var bounding = elem.getBoundingClientRect();
       return (

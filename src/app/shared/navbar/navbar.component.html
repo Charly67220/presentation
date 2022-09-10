@@ -12,7 +12,7 @@
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-10 collapse-brand">
-            <a [routerLink]="['/home']">
+            <a [routerLink]="['/home']" routerLinkActive="active">
               <img src="./assets/img/favicon.png">
               Açaì Bar - Vence
             </a>
@@ -28,7 +28,20 @@
       </div>
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" >
+          <a href="#/Açai" class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" >
+            <i class="ni ni-bulb-61 d-lg-none"></i>
+            <span class="nav-link-inner--text">
+              L'Açaì c'est quoi ?</span>
+          </a>
+          <!-- <div class="dropdown-menu">
+            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
+            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
+            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
+            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
+          </div> -->
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" [routerLink]="['/menu']">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">La Carte</span>
           </a>
@@ -46,7 +59,7 @@
                     consommer sur place ou à emporter</p>
                 </div>
               </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+              <a routerLinkActive="active" [routerLink]="['/menu']"
                 class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                   <!-- <i class="ni ni-ui-04"></i> -->
@@ -69,19 +82,6 @@
               </a>
             </div>
           </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#/Açai" class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" >
-            <i class="ni ni-bulb-61 d-lg-none"></i>
-            <span class="nav-link-inner--text">
-              L'Açaì c'est quoi ?</span>
-          </a>
-          <!-- <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div> -->
         </li>
         <li class="nav-item dropdown">
           <a href="#/landing" class="nav-link no-caret" data-toggle="dropdown" role="button" routerLinkActive="active" >

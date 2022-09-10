@@ -25,9 +25,18 @@
             </div>
           </div>
           <!-- >>>>>>>>>>>>>>> GESTION DU RENDU VISUEL <<<<<<<<<<<<<<<<<<<<<< -->
-          <div>
+          <div #screen>
+            <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails25" style="margin-bottom:-15px">
+              <img src="./assets/img/topping6.png" width="120px" class="img-fluid floating">
+            </div>
+            <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails24" style="margin-bottom:-30px">
+              <img src="./assets/img/topping5.png" width="120px" class="img-fluid floating">
+            </div>
+            <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails23" style="margin-bottom:-20px">
+              <img src="./assets/img/topping4.png" width="120px" class="img-fluid floating">
+            </div>
             <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails22">
-              <img src="./assets/img/topping2.png" width="120px" class="img-fluid floating">
+              <img src="./assets/img/topping3.png" width="120px" class="img-fluid floating">
             </div>
             <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails21">
               <img src="./assets/img/topping.png" width="120px" class="img-fluid floating">
@@ -39,6 +48,9 @@
             <div class="col-md-12 order-md-2 text-center" style="line-height: 15px; margin-top:-5px"
               *ngIf="ShowDetails11">
               <img src="./assets/img/granola1_layer.jpeg" width="120px" class="img-fluid floating">
+            </div>
+            <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails8">
+              <img src="./assets/img/banane_chunk.jpg" width="120px" class="img-fluid floating">
             </div>
             <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails7">
               <img src="./assets/img/orange_chunk.jpeg" width="120px" class="img-fluid floating">
@@ -62,7 +74,7 @@
               <img src="./assets/img/apple_chunk.jpg" width="120px" class="img-fluid floating">
             </div>
             <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="select">
-              <img src="./assets/img/goblet 2.png" width="120px" class="img-fluid floating">
+              <img src="./assets/img/goblet 2.png" width="122px" class="img-fluid floating">
             </div>
             <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowCup">
               <img src="./assets/img/goblet base 2.png" width="120px" class="img-fluid floating">
@@ -76,7 +88,8 @@
       </div>
       <!-- SVG separator -->
       <div class="separator separator-bottom separator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
@@ -86,7 +99,7 @@
   <section class="section section-lg section-shaped" style="padding-bottom: 5px; padding-top: 0px;">
 
     <div class="container">
-      <div class="row justify-content-center zindex-100" >
+      <div class="row justify-content-center zindex-100">
         <div class="col-lg-12">
           <div class="row row-grid">
             <div class="col-lg-4">
@@ -97,7 +110,7 @@
                   </div>
                   <h6 class="text-primary text-uppercase">Choisissez une base</h6>
                   <p class="description mt-3">Pour le moment nous ne proposons que la pulpe d'açaì comme base. <br>
-                    Il existe 3 tailles différentes que vous choisirez lors de la récupération.</p>
+                    Il existe 3 tailles différentes que vous choisirez lors du retrait de votre commande</p>
                   <div>
                     <button *ngIf="!ShowCup && !select" class="btn btn-1 btn-outline-primary" type="button"
                       (click)="selectElement(0)">Açaì</button>
@@ -145,6 +158,13 @@
                     <button *ngIf="!ShowDetails7" class="btn btn-1 btn-outline-success" type="button"
                       (click)="selectElement(7)">Orange</button>
                     <button *ngIf="ShowDetails7" class="btn btn-1 btn-success" type="button">Orange</button>
+                    <button *ngIf="!ShowDetails8" class="btn btn-1 btn-outline-success" type="button"
+                      (click)="selectElement(8)">Banane</button>
+                    <button *ngIf="ShowDetails8" class="btn btn-1 btn-success" type="button">Banane</button>
+                  </div>
+                  <div style="margin-top: 5px">
+                    <button class="btn btn-1 btn-success" (click)="reload()"> <img
+                        src="./assets/vendor/nucleo/fonts/cycle.svg"></button>
                   </div>
                 </div>
               </div>
@@ -156,25 +176,43 @@
                     <b>3</b>
                   </div>
                   <h6 class="text-warning text-uppercase">Choisissez un topping et un granola</h6>
-                  <p class="description mt-3">Touts les incrédients ajoutés peuvent être mis sur le dessus, au milieu, et même répartis sur 3 étages pour les grandes tailles.<br>
-                    Pour le moment nous avons 2 types de Granola.</p>
+                  <p class="description mt-3">Tous les ingrédients ajoutés peuvent être mis sur le dessus, au milieu,
+                    et même répartis sur 3 étages pour les grandes tailles.<br>
+                    Pour le moment, nous avons 2 types de Granola.</p>
                   <div>
-                    <div style="margin-bottom:3px">
+                    <div>
                       <button *ngIf="!ShowDetails11" class="btn btn-1 btn-outline-warning" type="button"
-                        (click)="selectElement(11)">Granola bio </button>
-                      <button *ngIf="ShowDetails11" class="btn btn-1 btn-warning" type="button">Granola bio</button>
+                        (click)="selectElement(11)" style="margin-bottom:3px;">Granola bio </button>
+                      <button *ngIf="ShowDetails11" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">Granola bio</button>
                       <button *ngIf="!ShowDetails12" class="btn btn-1 btn-outline-warning" type="button"
-                        (click)="selectElement(12)">Granola avoine</button>
-                      <button *ngIf="ShowDetails12" class="btn btn-1 btn-warning" type="button">Granola avoine</button>
+                        (click)="selectElement(12)" style="margin-bottom:3px">Granola avoine</button>
+                      <button *ngIf="ShowDetails12" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">Granola avoine</button>
                     </div>
-                    <div style="margin-bottom:3px">
-                      <!-- Miel chocolat, nutella, caramel, beurre de cacaouète -->
+                    <div>
+                      <!-- Miel chocolat, nutella, caramel, beurre de cacahuète -->
+                      <button *ngIf="!ShowDetails25" class="btn btn-1 btn-outline-warning" type="button"
+                        (click)="selectElement(25)" style="margin-bottom:3px">Miel</button>
+                      <button *ngIf="ShowDetails25" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">miel</button>
+                      <button *ngIf="!ShowDetails24" class="btn btn-1 btn-outline-warning" type="button"
+                        (click)="selectElement(24)" style="margin-bottom:3px">popcorn</button>
+                      <button *ngIf="ShowDetails24" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">popcorn</button>
+                      <button *ngIf="!ShowDetails23" class="btn btn-1 btn-outline-warning" type="button"
+                        (click)="selectElement(23)" style="margin-bottom:3px">caramel</button>
+                      <button *ngIf="ShowDetails23" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">caramel</button>
                       <button *ngIf="!ShowDetails21" class="btn btn-1 btn-outline-warning" type="button"
-                        (click)="selectElement(21)">lait condensé</button>
-                      <button *ngIf="ShowDetails21" class="btn btn-1 btn-warning" type="button">lait condensé</button>
+                        (click)="selectElement(21)" style="margin-bottom:3px">lait concentré</button>
+                      <button *ngIf="ShowDetails21" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">lait concentré</button>
                       <button *ngIf="!ShowDetails22" class="btn btn-1 btn-outline-warning" type="button"
-                        (click)="selectElement(22)">soufle hivernal</button>
-                      <button *ngIf="ShowDetails22" class="btn btn-1 btn-warning" type="button">soufle hivernal</button>
+                        (click)="selectElement(22)" style="margin-bottom:3px">beurre de cacahuète</button>
+                      <button *ngIf="ShowDetails22" class="btn btn-1 btn-warning" type="button"
+                        style="margin-bottom:3px">beurre de
+                        cacahuète</button>
                     </div>
                   </div>
                 </div>
@@ -190,121 +228,143 @@
     </div>
 
   </section>
-  <section class="section pb-0 bg-gradient-warning has-cards" >
+  <section class="section pb-0 bg-gradient-warning has-cards">
     <div class="container">
       <div class="row row-grid align-items-center">
         <div class="col-lg-12 order-lg-1">
           <div class="pl-4">
             <div class="row text-center">
               <!-- >>>>>>>>>>>>>>> GESTION DU RENDU VISUEL <<<<<<<<<<<<<<<<<<<<<< -->
-              <div class="col-md-3 " #screen>
-                <div *ngIf="ShowDetails22">
-                  <img src="./assets/img/topping2.png" width="120px">
+              <div class="col-md-4">
+                <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails25" style="margin-bottom:-15px">
+                  <img src="./assets/img/topping6.png" width="120px" class="img-fluid floating">
                 </div>
-                <div *ngIf="ShowDetails21">
-                  <img src="./assets/img/topping.png" width="120px">
+                <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails24" style="margin-bottom:-30px">
+                  <img src="./assets/img/topping5.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="line-height: 15px; margin-top:-5px" *ngIf="ShowDetails12">
-                  <img src="./assets/img/granola2_layer.jpeg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails23" style="margin-bottom:-20px">
+                  <img src="./assets/img/topping4.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="line-height: 15px; margin-top:-5px" *ngIf="ShowDetails11">
-                  <img src="./assets/img/granola1_layer.jpeg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails22">
+                  <img src="./assets/img/topping3.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails7">
-                  <img src="./assets/img/orange_chunk.jpeg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" *ngIf="ShowDetails21">
+                  <img src="./assets/img/topping.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails6">
-                  <img src="./assets/img/myrtilles_chunk.png" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="line-height: 15px; margin-top:-5px"
+                  *ngIf="ShowDetails12">
+                  <img src="./assets/img/granola2_layer.jpeg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails5">
-                  <img src="./assets/img/strawberries_chunk.png" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="line-height: 15px; margin-top:-5px"
+                  *ngIf="ShowDetails11">
+                  <img src="./assets/img/granola1_layer.jpeg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails4">
-                  <img src="./assets/img/mangue_chunk.jpeg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails8">
+                  <img src="./assets/img/banane_chunk.jpg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails3">
-                  <img src="./assets/img/kiwi_chunk.jpg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails7">
+                  <img src="./assets/img/orange_chunk.jpeg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails2">
-                  <img src="./assets/img/pineapple_chunks.jpg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails6">
+                  <img src="./assets/img/myrtilles_chunk.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails1">
-                  <img src="./assets/img/apple_chunk.jpg" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails5">
+                  <img src="./assets/img/strawberries_chunk.png" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="select">
-                  <img src="./assets/img/goblet 2.png" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails4">
+                  <img src="./assets/img/mangue_chunk.jpeg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="margin-top:-5px" *ngIf="ShowCup">
-                  <img src="./assets/img/goblet base 2.png" width="120px">
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails3">
+                  <img src="./assets/img/kiwi_chunk.jpg" width="120px" class="img-fluid floating">
                 </div>
-                <!-- FIN <<<<<<<<<<<<<<<<<<<<<< -->
-              </div>
-              <div class="col-md-3">
-                <div *ngIf="ShowDetails22">
-                  <p>Soufle hivernal</p>
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails2">
+                  <img src="./assets/img/pineapple_chunks.jpg" width="120px" class="img-fluid floating">
                 </div>
-                <div *ngIf="ShowDetails21">
-                  <p>Lait condensé</p>
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowDetails1">
+                  <img src="./assets/img/apple_chunk.jpg" width="120px" class="img-fluid floating">
                 </div>
-                <div style="line-height: 15px; margin-top:-5px" *ngIf="ShowDetails12">
-                  <p>Granola bio</p>
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="select">
+                  <img src="./assets/img/goblet 2.png" width="122px" class="img-fluid floating">
                 </div>
-                <div style="line-height: 15px; margin-top:-5px" *ngIf="ShowDetails11">
-                  <p>Granola Avoine</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails7">
-                  <p>Orange</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails6">
-                  <p>Myrtilles</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails5">
-                  <p>Fraises</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails4">
-                 <p>Mangue</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails3">
-                  <p>Kiwi</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails2">
-                <p>Ananas</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowDetails1">
-                  <p>Pomme</p>
-                </div>
-                <div style="margin-top:-5px" *ngIf="select">
-                 <p>Base Açaì</p>
-                 <button class="btn btn-1 btn-danger" (click)="reload()"> <img src="./assets/vendor/nucleo/fonts/cycle.svg"></button>
-                </div>
-                <div style="margin-top:-5px" *ngIf="ShowCup">
-                 <button class="btn btn-1 btn-danger" (click)="reload()"> <img src="./assets/vendor/nucleo/fonts/cycle.svg"></button>
-                  <p>Açaì seul</p>
+                <div class="col-md-12 order-md-2 text-center" style="margin-top:-5px" *ngIf="ShowCup">
+                  <img src="./assets/img/goblet base 2.png" width="120px" class="img-fluid floating">
                 </div>
                 <br>
               </div>
-              <div class="col-md-3">
-                <div class="form-group " [ngClass]="{'focused':focus===true}">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Your name" type="text" (focus)="focus=true"
-                      (blur)="focus=false">
-                  </div>
+              <!-- FIN <<<<<<<<<<<<<<<<<<<<<< -->
+              <div class="col-md-4">
+                <div *ngIf="ShowDetails25">
+                  <p>Miel</p>
                 </div>
-                <div class="form-group" [ngClass]="{'focused':focus1===true}">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Email address" type="email" (focus)="focus1=true"
-                      (blur)="focus1=false">
-                  </div>
+                <div *ngIf="ShowDetails24">
+                  <p>Popcorn</p>
                 </div>
+                <div *ngIf="ShowDetails23">
+                  <p>Caramel</p>
+                </div>
+                <div *ngIf="ShowDetails22">
+                  <p>Beurre de cacahuète</p>
+                </div>
+                <div *ngIf="ShowDetails21">
+                  <p>Lait concentré</p>
+                </div>
+                <div *ngIf="ShowDetails12">
+                  <p>Granola avoine</p>
+                </div>
+                <div *ngIf="ShowDetails11">
+                  <p>Granola bio</p>
+                </div>
+                <div *ngIf="ShowDetails8">
+                  <p>Banane</p>
+                </div>
+                <div *ngIf="ShowDetails7">
+                  <p>Orange</p>
+                </div>
+                <div *ngIf="ShowDetails6">
+                  <p>Myrtilles</p>
+                </div>
+                <div *ngIf="ShowDetails5">
+                  <p>Fraises</p>
+                </div>
+                <div *ngIf="ShowDetails4">
+                  <p>Mangue</p>
+                </div>
+                <div *ngIf="ShowDetails3">
+                  <p>Kiwi</p>
+                </div>
+                <div *ngIf="ShowDetails2">
+                  <p>Ananas</p>
+                </div>
+                <div *ngIf="ShowDetails1">
+                  <p>Pomme</p>
+                </div>
+                <div *ngIf="select">
+                  <p>Base Açaì</p><br>
+                  <button class="btn btn-1 btn-danger" (click)="reload()"> <img
+                      src="./assets/vendor/nucleo/fonts/cycle.svg"></button>
+                </div>
+                <div *ngIf="ShowCup">
+                  <p>Açaì seul</p><br>
+                  <button class="btn btn-1 btn-danger" (click)="reload()"> <img
+                      src="./assets/vendor/nucleo/fonts/cycle.svg"></button>
+                </div>
+                <br>
               </div>
-              <div class="col-md-3" style="padding-top:20px; padding-bottom: 20px;">
-                <button class="btn btn-1 btn-success" (click)="capture(); saveToServer()" type="button">GO !</button>
+              <div class="col-md-4">
+                <form #contactform="ngForm" (ngSubmit)="onSubmit(contactform)">
+                  <div class="form-group">
+                    <textarea name="mail" class="form-control" rows="1" id="soc" placeholder=" Adresse mail"
+                      style="resize: none;" ngModel required></textarea>
+                    <br>
+                    <textarea name="name" class="form-control" rows="1" id="soc" placeholder="Nom" style="resize: none;"
+                      ngModel required></textarea>
+                    <br>
+                  </div>
+                  <div style="padding-bottom: 100px;">
+                    <button class="btn btn-1 btn-success" type="submit">GO
+                      !</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -335,29 +395,28 @@
       <span></span>
       <span></span>
     </div>
-     <div class="container py-md">
-      <div *ngIf="ShowPhoto">
+    <div class="container py-md">
+      <!-- TODO : Affichage des açai personnalisé réalisés par les utilisateurs. Nécessite stockage en base pour gestion -->
+      <!-- <div *ngIf="ShowPhoto">
         <div class="row">
           <div class="col-md-4">
-          <img src="{{image}}" alt="" width="100">
+            <img src="{{image}}" alt="" width="100">
+            <img src="" alt="">
+            <span>{{this.event}}</span>
           </div>
           <div class="col-md-8">
             <p></p>
           </div>
         </div>
-      </div>
-     <!-- <div class="row row-grid justify-content-between align-items-center">
-        <div class="col-lg-6">
-          <h3 class="display-3 text-white">A beautiful Design System
-            <span class="text-white">completed with examples</span>
-          </h3>
-          <p class="lead text-white">The Design System comes with four pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 Design System.</p>
-          <div class="btn-wrapper">
-            <a [routerLink]="['/login']" class="btn btn-success">Login Page</a>
-            <a [routerLink]="['/register']" class="btn btn-white">Register Page</a>
-          </div>
+      </div> -->
+      <div class="row row-grid justify-content-between align-items-center">
+        <!-- <div class="col-lg-6">
+          <div class="row">
+            <app-liste class="col s6"></app-liste>
+            <app-produit class="col s6"></app-produit>
         </div>
-        <div class="col-lg-5 mb-lg-auto">
+        </div> -->
+        <!-- <div class="col-lg-5 mb-lg-auto">
           <div class="transform-perspective-right">
             <div class="card bg-secondary shadow border-0">
               <div class="card-header bg-white pb-5">
@@ -389,7 +448,8 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false">
+                      <input class="form-control" placeholder="Email" type="email" (focus)="focus=true"
+                        (blur)="focus=false">
                     </div>
                   </div>
                   <div class="form-group" [ngClass]="{'focused':focus1===true}">
@@ -397,7 +457,8 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                      <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true"
+                        (blur)="focus1=false">
                     </div>
                   </div>
                   <div class="custom-control custom-control-alternative custom-checkbox">
@@ -413,12 +474,13 @@
               </div>
             </div>
           </div>
-        </div>
-      </div> -->
-    </div> 
+        </div> -->
+      </div>
+    </div>
     <!-- SVG separator -->
     <div class="separator separator-bottom separator-skew">
-      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
         <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>

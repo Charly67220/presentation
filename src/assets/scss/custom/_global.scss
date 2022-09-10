@@ -64,68 +64,79 @@
                 opacity: 1;
 
                 &:nth-child(1) {
-                    left: 50%;
+                    left: 53%;
                     top: 50%;
                     font-size: 42px;
                     color: theme-color("warning");
                 }
 
                 &:nth-child(2) {
-                    left: calc(50% + (var(--gutter) * 1.7));
-                    top: 50%;
+                    left: calc(50% + (var(--gutter)));
+                    top: 26%;
                 }
-
                 &:nth-child(3) {
-                    left: calc(50% + var(--gutter));
-                    top: calc(50% + var(--gutter));
+                    left: calc(55% + (var(--gutter)));
+                    // left: calc(50% + (var(--gutter) * 1.7));
+                    top: 50%;
                 }
 
                 &:nth-child(4) {
                     left: calc(50% + var(--gutter));
-                    top: calc(50% - var(--gutter));
+                    top: calc(40% + var(--gutter));
                 }
 
                 &:nth-child(5) {
+                    left: calc(23% + var(--gutter));
+                    top: calc(37% - var(--gutter));
+                }
+
+                &:nth-child(6) {
                     left: calc(50% + (var(--gutter) * 4));
                     top: 50%;
                 }
 
-                &:nth-child(6) {
+                &:nth-child(7) {
                     left: calc(50% + (var(--gutter) * 2.7));
                     top: calc(50% + (var(--gutter) * 1.5));
                 }
 
-                &:nth-child(7) {
+                &:nth-child(8) {
                     left: calc(50% + (var(--gutter) * 2.7));
                     top: calc(50% - (var(--gutter) * 1.5));
                 }
 
-                &:nth-child(8) {
-                    left: calc(50% - (var(--gutter) * 1.7));
-                    top: 50%;
-                }
-
                 &:nth-child(9) {
-                    left: calc(50% - var(--gutter));
-                    top: calc(50% + var(--gutter));
+                    left: calc(47% - (var(--gutter)));
+                    // left: calc(50% - (var(--gutter) * 1.7));
+                    top: 46%;
                 }
 
                 &:nth-child(10) {
-                    left: calc(50% - var(--gutter));
-                    top: calc(50% - var(--gutter));
+                    left: calc(68% - var(--gutter));
+                    top: calc(60% + var(--gutter));
                 }
 
                 &:nth-child(11) {
+                    left: calc(52% - var(--gutter));
+                    top: calc(58% - var(--gutter));
+                }
+
+                &:nth-child(12) {
+                    left: calc(50% - var(--gutter));
+                    top: calc(96% - var(--gutter));
+                }
+
+                &:nth-child(13) {
                     left: calc(50% - (var(--gutter) * 4));
                     top: 50%;
                 }
 
-                &:nth-child(12) {
+                &:nth-child(14) {
                     left: calc(50% - (var(--gutter) * 2.7));
                     top: calc(50% + (var(--gutter) * 1.5));
                 }
 
-                &:nth-child(13) {
+                &:nth-child(15) {
                     left: calc(50% - (var(--gutter) * 2.7));
                     top: calc(50% - (var(--gutter) * 1.5));
                 } 

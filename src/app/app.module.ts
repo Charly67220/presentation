@@ -18,7 +18,6 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
 
 import { HomeModule } from './home/home.module';
 import { AçaiComponent } from './Açai/Açai.component';
-import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { SigninComponent } from './auth/signin/signin.component';
     NavbarComponent,
     FooterComponent,
     AçaiComponent,
-    SigninComponent
   ],
   imports: [
     BrowserModule,
