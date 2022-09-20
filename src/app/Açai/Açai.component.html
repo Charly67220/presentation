@@ -1,40 +1,84 @@
 <main>
   <section class="section section-shaped section-lg">
-    <div class="shape shape-style-1 bg-gradient-default">
+    <div class="shape shape-style-1 bg-gradient-green"
+      style=" background: linear-gradient(87deg, #789f15 0, #3a7c17 100%)!important">
+      <!-- <span></span>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      <span></span>
-      <span></span>
+      <span></span> -->
     </div>
     <div class="container pt-lg-md">
-      <div class="row justify-content-center">
-        <p class="lead text-white " style="margin-left:10px; margin-right:10px">
-          C'est un fruit issu d'un palmier gracile provenant de l'Amazonie et pouvant mesurer jusqu'à 20 mètres. Ce
-          fruit ressemble beaucoup à la myrtille et au bleuet, il pousse en grappe le long des troncs et son goût se
-          situe entre le chocolat et les fruits rouges. </p>
-           <br>
-           <div *ngIf="mobile">
-            <img src="./assets/img/car-hand.jpeg" width="100%" alt="berries">
-           </div>
-           <br>
-        <p class="lead text-white " style="margin-left:10px; margin-right:10px">
-          Cette baie étant très fragile, le meilleur moyen de la conserver
-          est de la congeler rapidement après la cueillette. Au Brésil, on la retrouve partout et elle est généralement
-          servie sous forme de sorbet avec banane, granola ou lait concentré selon vos envies. Sa pulpe est très riche en
-          vitamines et possède de nombreuses qualités nutritionnelles !
+      <div class="col-lg-12 text-center">
+        <h1 class="display-4  text-white">
+          <font size="34px">Qu'est ce que l'Açaì ?</font>
+          <span>prononcé "assa-i" dans les pays lusophones et ass-aïe en France</span>
+        </h1>
+        <p class="lead  text-white"> Il s'agit d'un aliment classé parmis les superfood car il est très riche en
+          nutriments essentiels ! </p>
+      </div>
+
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 0px;">
+      <div class="shape shape-style-1 bg-gradient-grey">
+        <p *ngIf="!mobile" class="lead text-indigo " style="margin-left:150px; margin-right:150px">
+          <b>
+            C'est un fruit issu d'un palmier gracile provenant de l'Amazonie et pouvant mesurer jusqu'à 20 mètres. Ce
+            fruit ressemble beaucoup à la myrtille et au bleuet, il pousse en grappe le long des troncs et son goût se
+            situe entre le chocolat et les fruits rouges.
+          </b>
+        </p>
+        <p *ngIf="mobile" class="lead text-indigo " style="margin-left:10px; margin-right:10px">
+          <b>
+            C'est un fruit issu d'un palmier gracile provenant de l'Amazonie et pouvant mesurer jusqu'à 20 mètres. Ce
+            fruit ressemble beaucoup à la myrtille et au bleuet, il pousse en grappe le long des troncs et son goût se
+            situe entre le chocolat et les fruits rouges.
+          </b>
+        </p>
+        <br>
+        <div *ngIf="mobile">
+          <img src="./assets/img/car-hand.jpeg" width="100%" alt="berries">
+          <p class="lead text-indigo " style="margin-left:10px; margin-right:10px">
+            <b>
+              Cette baie étant très fragile, le meilleur moyen de la conserver
+              est de la congeler rapidement après la cueillette. Au Brésil, on la retrouve partout et elle est
+              généralement
+              servie sous forme de sorbet avec banane, granola ou lait concentré selon vos envies. Sa pulpe est très riche
+              en
+              vitamines et possède de nombreuses qualités nutritionnelles !
+            </b>
+          </p>
+        </div>
+        <br>
+        <p *ngIf="!mobile" class="lead text-indigo " style="margin-left:150px; margin-right:150px">
+          <b>
+            Cette baie étant très fragile, le meilleur moyen de la conserver
+            est de la congeler rapidement après la cueillette. Au Brésil, on la retrouve partout et elle est
+            généralement
+            servie sous forme de sorbet avec banane, granola ou lait concentré selon vos envies. Sa pulpe est très riche
+            en
+            vitamines et possède de nombreuses qualités nutritionnelles !
+          </b>
         </p>
         <br>
       </div>
       <div class="row justify-content-center" *ngIf="mobile">
         <img src="./assets/img/car-pairot.jpeg" width="100%" alt="pairot">
-       </div>
-      <div *ngIf="!mobile">
+      </div>
+      <div *ngIf="!mobile" class="text-center">
         <app-carrousel>carousel is working</app-carrousel>
       </div>
-    </div>
   </section>
+
 </main>

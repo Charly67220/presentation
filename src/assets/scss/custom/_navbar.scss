@@ -1,8 +1,10 @@
 .navbar-nav {
     .nav-link {
-        font-size: $navbar-nav-link-font-size;
+        font-size: 17px;
+        // font-size: $navbar-nav-link-font-size;
         font-family: $navbar-nav-link-font-family;
-        font-weight: $navbar-nav-link-font-weight;
+        font-weight: 600;
+        // font-weight: $navbar-nav-link-font-weight;
         text-transform: $navbar-nav-link-text-transform;
         letter-spacing: $navbar-nav-link-letter-spacing;
         @include transition($navbar-transition);
@@ -21,7 +23,7 @@
     letter-spacing: .05px;
 
     img {
-        height: 30px;
+        height: 60px; //TODO taille image navbar
     }
 }
 
@@ -38,11 +40,11 @@
 }
 
 .navbar-nav {
-  .nav-item {
-    .media:not(:last-child){
-      margin-bottom: 1.5rem;
+    .nav-item {
+        .media:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
     }
-  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -64,6 +66,7 @@
                 }
             }
         }
+
         .nav-link {
             padding-top: $navbar-nav-link-padding-y;
             padding-bottom: $navbar-nav-link-padding-y;
@@ -138,7 +141,7 @@
                 transition: visibility 0.25s, opacity 0.25s, transform 0.25s;
             }
 
-            .nav-item.dropdown:hover > .dropdown-menu {
+            .nav-item.dropdown:hover>.dropdown-menu {
                 display: block;
                 opacity: 1;
                 pointer-events: auto;
@@ -193,8 +196,8 @@
                 }
             }
 
-            .show > .nav-link,
-            .active > .nav-link,
+            .show>.nav-link,
+            .active>.nav-link,
             .nav-link.show,
             .nav-link.active {
                 color: $navbar-dark-active-color;
@@ -222,6 +225,7 @@
         .nav-link {
             padding: .625rem 0;
             color: theme-color("default") !important;
+
         }
 
         .dropdown-menu {
@@ -280,11 +284,15 @@
             padding-bottom: 1rem;
             margin-bottom: 1rem;
             border-bottom: 1px solid rgba(0, 0, 0, .1);
+            font-size: 2rem;
+            text-align: center;
         }
 
         .collapse-brand {
             img {
-                height: 36px;
+                height: 35px;
+                margin-bottom: 0.5rem;
+
             }
         }
 
@@ -298,7 +306,7 @@
         padding: 1.5rem;
         border-radius: $border-radius;
         background: #FFF;
-        box-shadow: 0 50px 100px rgba(50,50,93,.1),0 15px 35px rgba(50,50,93,.15),0 5px 15px rgba(0,0,0,.1);
+        box-shadow: 0 50px 100px rgba(50, 50, 93, .1), 0 15px 35px rgba(50, 50, 93, .15), 0 5px 15px rgba(0, 0, 0, .1);
         animation: show-navbar-collapse .2s ease forwards;
     }
 
